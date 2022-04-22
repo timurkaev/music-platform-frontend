@@ -1,0 +1,29 @@
+.track {
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
+  &__btn {}
+
+  &__img {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+  }
+
+  &__description {
+    width: 200px;
+    margin: 0 20px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  &__artist {
+    font-size: 12px;
+    color: #afafaf;
+  }
+}

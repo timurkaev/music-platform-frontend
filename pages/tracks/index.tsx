@@ -3,7 +3,7 @@ import MainLayout from '../../layouts/MainLayout';
 import { Box, Button, Card, Grid } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import { ITrack } from '../../types/track';
-import TrackList from '../../components/TrackList';
+import TrackList from '../../components/TracksList';
 
 const Index = () => {
   const router = useRouter();
@@ -17,7 +17,7 @@ const Index = () => {
       audio:
         'http://localhost:5000/audio/55706a72-fae7-4523-bdb7-a2397ff2f025.mp3',
       picture:
-        'http://localhost:5000/image/e25c16e5-72a2-4c62-a7a2-50667294995a.png',
+        'http://localhost:5000/image/fe3db737-0d51-47ad-b88f-634e90241d8c.jpg',
       comments: [],
     },
     {
@@ -29,7 +29,7 @@ const Index = () => {
       audio:
         'http://localhost:5000/audio/55706a72-fae7-4523-bdb7-a2397ff2f025.mp3',
       picture:
-        'http://localhost:5000/image/e25c16e5-72a2-4c62-a7a2-50667294995a.png',
+        'http://localhost:5000/image/fe3db737-0d51-47ad-b88f-634e90241d8c.jpg',
       comments: [],
     },
     {
@@ -41,7 +41,7 @@ const Index = () => {
       audio:
         'http://localhost:5000/audio/55706a72-fae7-4523-bdb7-a2397ff2f025.mp3',
       picture:
-        'http://localhost:5000/image/e25c16e5-72a2-4c62-a7a2-50667294995a.png',
+        'http://localhost:5000/image/fe3db737-0d51-47ad-b88f-634e90241d8c.jpg',
       comments: [],
     },
   ];
@@ -50,7 +50,7 @@ const Index = () => {
     <MainLayout>
       <Grid container justifyContent="center">
         <Card style={{ width: 900 }}>
-          <Box p={5}>
+          <Box style={{ padding: '20px' }}>
             <Grid container justifyContent="space-between">
               <h1>Список треков</h1>
               <Button onClick={() => router.push('/tracks/create')}>

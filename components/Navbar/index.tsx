@@ -17,8 +17,10 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 import { useRouter } from 'next/router';
 
+import styles from './Navbar.module.scss';
+
 const menuItems = [
-  { text: 'Главня', href: '/' },
+  { text: 'Главная', href: '/' },
   { text: 'Список треков', href: '/tracks' },
   { text: 'Список альбомов', href: '/albums' },
 ];
