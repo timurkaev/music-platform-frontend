@@ -18,7 +18,11 @@ const steps = ['Информация о треке', 'Загрузите обл�
 const StepWrapper: React.FC<StepWrapperProps> = ({ activeStep, children }) => {
   return (
     <Container>
-      <Stepper activeStep={activeStep}>
+      <Stepper
+        alternativeLabel
+        style={{ background: 'none' }}
+        activeStep={activeStep}
+      >
         {steps.map((step, index) => (
           <Step completed={activeStep > index} key={index}>
             <StepLabel>{step}</StepLabel>
