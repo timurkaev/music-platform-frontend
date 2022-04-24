@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
+import styles from './FileUpload.module.scss';
 
 interface FileUploadProps {
   setFile: Function;
@@ -13,7 +14,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ setFile, accept, title }) => {
   };
 
   return (
-    <div>
+    <div className={styles.file__upload}>
       <Button variant="contained" component="label">
         {title}
         <input accept={accept} type="file" hidden onChange={onChange} />

@@ -1,12 +1,14 @@
 import React from 'react';
-import Index from '../components/Navbar';
 import { Container } from '@material-ui/core';
+import Player from '../components/Player';
+import Navbar from '../components/Navbar';
 
 const MainLayout = ({ children }) => {
   return (
     <>
-      <Index />
+      <Navbar />
       <Container style={{ margin: '90px auto' }}>{children}</Container>
+      <Player />
     </>
   );
 };
