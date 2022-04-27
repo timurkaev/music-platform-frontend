@@ -12,7 +12,7 @@ const TrackForm = () => {
         fullWidth
         multiline
         variant="outlined"
-        rows={4}
+        minRows={4}
       />
       <Button className={styles.form__btn} variant="contained" color="primary">
         Отправить

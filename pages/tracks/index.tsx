@@ -4,6 +4,10 @@ import { Box, Button, Card, Grid } from '@material-ui/core';
 import { useRouter } from 'next/router';
 import { ITrack } from '../../types/track';
 import TrackList from '../../components/TracksList';
+import { useTypedSelector } from '../../hooks/useTypedSelector';
+import { useActions } from '../../hooks/useActions';
+import { NextThunkDispatch, wrapper } from '../../store';
+import { fetchTracks } from '../../store/actions/tracks';
 
 const Index = () => {
   const router = useRouter();
@@ -15,7 +19,7 @@ const Index = () => {
       text: 'Text 1',
       listens: 5,
       audio:
-        'http://localhost:5000/audio/55706a72-fae7-4523-bdb7-a2397ff2f025.mp3',
+        'http://localhost:5000/audio/22186045-c58d-4888-9805-9d161d605d75.mp3',
       picture:
         'http://localhost:5000/image/fe3db737-0d51-47ad-b88f-634e90241d8c.jpg',
       comments: [],
@@ -27,7 +31,7 @@ const Index = () => {
       text: 'Text 2',
       listens: 3,
       audio:
-        'http://localhost:5000/audio/55706a72-fae7-4523-bdb7-a2397ff2f025.mp3',
+        'http://localhost:5000/audio/22186045-c58d-4888-9805-9d161d605d75.mp3',
       picture:
         'http://localhost:5000/image/fe3db737-0d51-47ad-b88f-634e90241d8c.jpg',
       comments: [],
@@ -39,7 +43,7 @@ const Index = () => {
       text: 'Text 3',
       listens: 10,
       audio:
-        'http://localhost:5000/audio/55706a72-fae7-4523-bdb7-a2397ff2f025.mp3',
+        'http://localhost:5000/audio/22186045-c58d-4888-9805-9d161d605d75.mp3',
       picture:
         'http://localhost:5000/image/fe3db737-0d51-47ad-b88f-634e90241d8c.jpg',
       comments: [],
@@ -66,3 +70,12 @@ const Index = () => {
 };
 
 export default Index;
+
+// export const getServerSideProps = wrapper.getServerSideProps(
+//   async ({ store }) => {
+//     const dispatch = store.dispatch as NextThunkDispatch;
+//     await dispatch(await fetchTracks());
+//   },
+// );
+//const dispatch = store.dispatch as NextThunkDispatch;
+//     await store.dispatch(await fetchTracks());

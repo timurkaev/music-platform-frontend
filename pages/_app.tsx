@@ -1,7 +1,8 @@
 import '../styles/global.scss';
 import Head from 'next/head';
+import { wrapper } from '../store';
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -21,3 +22,5 @@ export default function MyApp({ Component, pageProps }) {
     </>
   );
 }
+
+export default wrapper.withRedux(MyApp);

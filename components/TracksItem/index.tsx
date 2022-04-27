@@ -5,6 +5,7 @@ import styles from './TracksItem.module.scss';
 import { Card, Grid, IconButton } from '@material-ui/core';
 import { Delete, Pause, PlayArrow } from '@material-ui/icons';
 import { useRouter } from 'next/router';
+import { useActions } from '../../hooks/useActions';
 
 interface TrackItemProps {
   track: ITrack;
@@ -14,8 +15,12 @@ interface TrackItemProps {
 const TracksItem: React.FC<TrackItemProps> = ({ track, active = false }) => {
   const router = useRouter();
 
-  const onActivePlayAudio = (e: React.SyntheticEvent) => {
+  const { playTrack, pauseTrack, setActiveTrack } = useActions();
+
+  const play = (e: React.SyntheticEvent) => {
     e.stopPropagation();
+    setActiveTrack(track);
+    playTrack();
   };
 
   const onRemoveAudio = (e: React.SyntheticEvent) => {
@@ -27,7 +32,7 @@ const TracksItem: React.FC<TrackItemProps> = ({ track, active = false }) => {
       onClick={() => router.push('/tracks/' + track._id)}
       className={styles.track}
     >
-      <IconButton onClick={onActivePlayAudio} className={styles.track__btn}>
+      <IconButton onClick={play} className={styles.track__btn}>
         {active ? <Pause /> : <PlayArrow />}
       </IconButton>
       <img className={styles.track__img} src={track.picture} alt="picture" />
